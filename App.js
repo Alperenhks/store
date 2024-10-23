@@ -20,13 +20,11 @@ const App = () => {
     const checkLoginStatus = async () => {
       const userData = await AsyncStorage.getItem('user');
       console.log(userData);
-      
       if (userData) {
         setIsLoggedIn(true);
       }
       setIsLoading(false);
     };
-
     checkLoginStatus();
   }, []);
 

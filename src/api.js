@@ -7,7 +7,6 @@ const api = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
-// Kullanıcı girişi
 export const loginUser = async (username, password) => {
   try {
     const response = await api.post('/auth/login', { username, password });
@@ -17,7 +16,6 @@ export const loginUser = async (username, password) => {
   }
 };
 
-// Ürün detaylarını al
 export const getProductDetails = async (productId) => {
   try {
     const response = await api.get(`/products/${productId}`);
@@ -27,7 +25,6 @@ export const getProductDetails = async (productId) => {
   }
 };
 
-// Tüm ürünleri al
 export const getProducts = async () => {
   try {
     const response = await api.get('/products');
@@ -37,7 +34,6 @@ export const getProducts = async () => {
   }
 };
 
-// Kullanıcıya ait sepeti al
 export const getCart = async (cartId) => {
   try {
     const response = await api.get(`/carts/${cartId}`);
@@ -47,7 +43,6 @@ export const getCart = async (cartId) => {
   }
 };
 
-// Ürünü sepete ekle
 export const addToCart = async (userId, productId, quantity) => {
   try {
     const response = await api.post(`/carts/add`, {
@@ -60,7 +55,6 @@ export const addToCart = async (userId, productId, quantity) => {
   }
 };
 
-// Sepeti güncelle
 export const updateCart = async (cartId, products) => {
   try {
     const response = await api.put(`/carts/${cartId}`, {
@@ -75,7 +69,6 @@ export const updateCart = async (cartId, products) => {
   }
 };
 
-// Sepetten ürün sil
 export const removeFromCart = async (cartId) => {
   try {
     const response = await api.delete(`/carts/${cartId}`);
@@ -87,33 +80,3 @@ export const removeFromCart = async (cartId) => {
 };
 
 
-// useEffect(() => {
-//   navigation.setOptions({
-//     headerTitle: `Sepetim (${cartItems?.length} ürün)`,
-//     headerLeft: () => (
-//       <Ionicons
-//         name="arrow-back"
-//         size={24}
-//         color="black"
-//         onPress={() => navigation.goBack()}
-//         style={{ marginLeft: 15 }}
-//       />
-//     ),
-//     headerRight: () => (
-//       <View style={{ flexDirection: 'row', marginRight: 15 }}>
-//         <Ionicons
-//           name="checkmark-circle-outline"
-//           size={24}
-//           color="green"
-//           onPress={() => console.log('Onaylandı')}
-//           style={{ marginRight: 15 }}
-//         />
-//         <Ionicons
-//           name="trash-outline"
-//           size={24}
-//           color="green"
-//         />
-//       </View>
-//     ),
-//   });
-// }, [totalQuantity, navigation, cartItems.length]);
