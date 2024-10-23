@@ -21,7 +21,7 @@ const BottomTabs = () => (
       name="Ana Sayfa"
       component={HomeScreen}
       options={{
-        headerShown: false, // HomeScreen için üst başlığı gizle
+        headerShown: false, 
         tabBarIcon: ({ color, size }) => (
           <Ionicons name="home-outline" size={size} color={color} />
         ),

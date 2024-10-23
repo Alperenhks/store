@@ -40,7 +40,7 @@ const App = () => {
           <Stack.Screen options={{headerShown:false}} name="Register" component={RegisterScreen} />
           <Stack.Screen options={{headerShown:false}} name="ForgotPass" component={ForgotPassword} />
           <Stack.Screen name="Home" component={BottomTabs} options={{ headerShown: false }} />
-          <Stack.Screen name="ProductDetail" component={ProductDetailScreen} />
+          <Stack.Screen name="ProductDetail" options={{ headerTitle: '' }} component={ProductDetailScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </Provider>

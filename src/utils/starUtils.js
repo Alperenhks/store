@@ -8,15 +8,15 @@ export const renderStars = (rating) => {
 
   return (
     <View style={{ flexDirection: 'row' }}>
-      {[...Array(5)].map((_, index) => {
-        if (index < fullStars) {
-          return <Ionicons key={index} name="star" size={17} color="gold" />;
+      {[...Array(5)].map((_, start) => {
+        if (start < fullStars) {
+          return <Ionicons key={start} name="star" size={17} color="gold" />;
         }
         return (
           <Ionicons
-            key={index}
+            key={start}
             name={
-              index === fullStars && hasHalfStar
+              start === fullStars && hasHalfStar
                 ? "star-half"
                 : "star-outline"
             }
